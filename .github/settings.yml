@@ -1,0 +1,50 @@
+# see: https://github.com/probot/settings
+
+repository:
+  name: template.basic # replace
+  description: Basic template with most common boilerplate for general respoistory creation # replace
+  topics: template # replace
+  private: true
+  has_issues: false
+  has_wiki: false
+  is_template: true # replace
+  default_branch: production
+  allow_squash_merge: false
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  archived: false
+
+teams:
+  - name: engineering
+    permission: admin
+
+branches:
+  - name: production
+    protection:
+      required_conversation_resolution: true
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: false
+      restrictions:
+  - name: staging
+    protection:
+      required_conversation_resolution: true
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: false
+      restrictions:
+  - name: testing
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        dismissal_restrictions: {}
+      required_conversation_resolution: true
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: false
+      restrictions:
