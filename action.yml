@@ -12,9 +12,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://sqitch/sqitch:v1.4'
-  pre-entrypoint:
-    - 'pwd'
-    - 'ls -la'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.target }}
