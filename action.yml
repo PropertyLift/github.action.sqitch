@@ -12,11 +12,10 @@ inputs:
   target:
     description: 'Target'
     required: true
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
-    - '--chdir'
-    - ${{ inputs.base_dir }}
     - ${{ inputs.target }}
