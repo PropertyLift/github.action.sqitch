@@ -18,4 +18,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
+    - '--chdir'
+    - ${{ inputs.base_dir }}
     - ${{ inputs.target }}
