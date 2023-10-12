@@ -15,9 +15,10 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://sqitch/sqitch:v1.4'
+  pre-entrypoint:
+    - 'pwd'
+    - 'ls -la'
   args:
     - ${{ inputs.command }}
-    - '--chdir'
-    - ${{ inputs.base_dir }}
     - ${{ inputs.target }}
