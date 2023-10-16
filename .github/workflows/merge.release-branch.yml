@@ -47,7 +47,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*github.action.security-scan ${{ steps.bump_and_tag.outputs.tag }}* has been released :rocket:"
+                    "text": "*github.action.sqitch ${{ steps.bump_and_tag.outputs.tag }}* has been released :rocket:"
                   }
                 }
               ],

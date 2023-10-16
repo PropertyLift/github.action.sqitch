@@ -29,7 +29,7 @@ jobs:
   migration:
     steps:
       - name: Run migrations
-        uses: propertylift/github.action.sqitch@main
+        uses: propertylift/github.action.sqitch@latest
         with:
           command: "deploy"
           target: "db:pg://${{ env.DB_USER }}:${{ env.DB_PASS }}@${{ env.DB_HOST }}:${{ env.DB_PORT }}/${{ env.DB_NAME}}"
