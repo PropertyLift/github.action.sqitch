@@ -2,7 +2,7 @@
 
 repository:
   name: github.action.sqitch
-  description: GitHub custom action for running Sqitch mogrations
+  description: GitHub custom action for running Sqitch migrations
   topics: github action sqitch
   private: false
   has_issues: false
