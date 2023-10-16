@@ -1,6 +1,6 @@
 # action.yml
-name: 'Sqitch'
-description: 'Run sqitch'
+name: 'Sqitch Action'
+description: 'Run migrations'
 inputs:
   command:
     description: 'Command to run'
