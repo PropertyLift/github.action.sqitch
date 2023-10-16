@@ -1,11 +1,43 @@
-# This is a template readme
+# Sqitch migrations
 
-Replace the content of this readme with information on your project such as:
+This custom GitHub Action should be used for running database migrations within [Sqitch](https://sqitch.org/)
 
-- the purpose of the codebase
-- instructions on how to use
-- links for further reference
+## Workflow steps
 
-Be as detailed as needed, and its useful to pretend you're writing this for yourself to remember in 6 months time.
+Action designed to use prebuilded Docker image [sqitch/sqitch](https://hub.docker.com/r/sqitch/sqitch)` to run database migrations
 
-Remember to update .github/settings.yml with sensible parameters for your project. You will need to change (at a miniumum) and parameter with a `# replace` comment.
+## Future improvements
+
+TBD
+
+## How to use guide
+
+### Basic setup
+
+```yml
+env:
+  DB_HOST:
+  DB_PORT:
+  DB_USER:
+  DB_PASS:
+  DB_NAME:
+
+jobs:
+.
+.
+.
+  migration:
+    steps:
+      - name: Run migrations
+        uses: propertylift/github.action.sqitch@main
+        with:
+          command: "deploy"
+          target: "db:pg://${{ env.DB_USER }}:${{ env.DB_PASS }}@${{ env.DB_HOST }}:${{ env.DB_PORT }}/${{ env.DB_NAME}}"
+```
+
+## Inputs
+
+| Parameter Name | Required | Default | Description                                  |
+| -------------- | -------- | ------- | -------------------------------------------- |
+| command        | Yes      | -       | The command which will be passed to sqitch   |
+| target         | Yes      | -       | Database URI on Sqitch should run migrations |
