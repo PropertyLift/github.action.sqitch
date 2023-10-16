@@ -1,10 +1,10 @@
 # Sqitch migrations
 
-This custom GitHub Action
+This custom GitHub Action should be used for running database migrations within [Sqitch](https://sqitch.org/)
 
 ## Workflow steps
 
-Action designed to use prebuilded Docker image `sqitch/sqitch`  to run migrations
+Action designed to use prebuilded Docker image [sqitch/sqitch](https://hub.docker.com/r/sqitch/sqitch)` to run database migrations
 
 ## Future improvements
 
