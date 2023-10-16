@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: propertylift/action.control-merge@v1
+      - uses: propertylift/action.control-merge@v2
         with:
           workflow: main
           feature_pattern: feature/*
