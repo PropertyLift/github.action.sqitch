@@ -47,7 +47,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*${{ GITHUB_REPOSITORY }} ${{ steps.bump_and_tag.outputs.tag }}* has been released :rocket:"
+                    "text": "*${{ github.repository }} ${{ steps.bump_and_tag.outputs.tag }}* has been released :rocket:"
                   }
                 }
               ],
