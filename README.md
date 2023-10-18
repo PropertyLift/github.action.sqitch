@@ -27,6 +27,8 @@ jobs:
 .
 .
   migration:
+    name: Run DB migrations
+    runs-on: db-migration-[test..prod]
     steps:
       - name: Run migrations
         uses: propertylift/github.action.sqitch@latest
