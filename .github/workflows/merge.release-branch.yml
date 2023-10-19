@@ -16,6 +16,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set repository name to variable
+        run: |
+          echo "PROJECT_SHORT_NAME=$(echo ${{ github.repository }} | cut -d '/' -f 2)" >> $GITHUB_ENV
+
       - name: Bump and Tag
         id: bump_and_tag
         uses: propertylift/action.bump-version-and-tag@v2
@@ -47,7 +51,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*${{ github.repository }} ${{ steps.bump_and_tag.outputs.tag }}* has been released :rocket:"
+                    "text": "*${{ env.PROJECT_SHORT_NAME }} ${{ steps.bump_and_tag.outputs.tag }}* has been released :rocket:"
                   }
                 }
               ],
